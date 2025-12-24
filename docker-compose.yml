@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_RPC_URL=${VITE_RPC_URL:-https://sepolia.infura.io/v3/YOUR_INFURA_KEY}
+      - VITE_TOKEN_ADDRESS=${VITE_TOKEN_ADDRESS:-0x}
+      - VITE_FAUCET_ADDRESS=${VITE_FAUCET_ADDRESS:-0x}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
