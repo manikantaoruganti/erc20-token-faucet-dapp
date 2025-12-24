@@ -1,0 +1,25 @@
+{
+  "name": "erc20-token-faucet-dapp",
+  "version": "1.0.0",
+  "description": "Full-Stack ERC-20 Token Faucet DApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:local": "hardhat run scripts/deploy.js --network hardhat",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "@openzeppelin/hardhat-upgrades": "^2.0.0",
+    "ethers": "^6.9.0",
+    "hardhat": "^2.19.0"
+  },
+  "devDependencies": {
+    "@hardhat/ethers": "^2.2.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "hardhat-gas-reporter": "^1.0.9"
+  }
+}
